@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Readify</title>
+  <style>
+    body { 
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center; 
+      width: 220px; 
+      background: #000; /* pure black background */
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+      border-radius: 10px;
+    }
+
+    h3 {
+      margin-top: 0;
+      font-size: 20px;
+      letter-spacing: 1px;
+      color: #00ffcc;
+      text-shadow: 0 0 8px #00ffcc;
+    }
+
+    button { 
+      margin: 8px;
+      padding: 12px 16px;
+      width: 160px;
+      border: none;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+    }
+
+    #play {
+      background: linear-gradient(145deg, #00cc99, #009977);
+    }
+
+    #pause {
+      background: linear-gradient(145deg, #ffb300, #cc8a00);
+    }
+
+    #stop {
+      background: linear-gradient(145deg, #ff4d4d, #b30000);
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    }
+
+    button:active {
+      transform: scale(0.95);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    /* Pulse glow animation when active */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+      }
+      50% {
+        box-shadow: 0 0 25px rgba(0, 255, 204, 1);
+        transform: scale(1.08);
+      }
+      100% {
+        box-shadow: 0 0 10px rgba(0, 255, 204, 0.4);
+        transform: scale(1);
+      }
+    }
+
+    button.active {
+      animation: pulse 1s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body>
+  <h3>Readify</h3>
+  <button id="play">Play</button>
+  <button id="pause">Pause</button>
+  <button id="stop">Stop</button>
+
+  <!-- Load external JS -->
+  <script src="popup.js"></script>
+</body>
+</html>
